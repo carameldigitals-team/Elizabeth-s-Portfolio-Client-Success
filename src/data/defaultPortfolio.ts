@@ -210,9 +210,9 @@ export const defaultPortfolioData: PortfolioData = {
   contactEmphasis: "Something Together",
   contactSubheading: "Whether you want to join the WAVE Masterclass, invite me to speak at your event, or explore a partnership — I'd love to hear from you.",
   contactDetails: {
-    website: "carameldigitals.com",
-    linkedin: "linkedin.com/in/elizabethemmanuel",
+    website: "www.carameldigitals.com",
+    linkedin: "https://www.linkedin.com/in/elizabeth-emmanuel-carameldigitals",
     email: "hello@carameldigitals.com",
-    whatsapp: "Available via LinkedIn or website"
+    whatsapp: "https://wa.link/ldgv9u"
   }
 };

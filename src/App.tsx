@@ -148,6 +148,24 @@ export default function App() {
           migrated = true;
         }
 
+        // Auto-migrate website to include www.
+        if (parsed.contactDetails && parsed.contactDetails.website === "carameldigitals.com") {
+          parsed.contactDetails.website = "www.carameldigitals.com";
+          migrated = true;
+        }
+
+        // Auto-migrate LinkedIn to the user's specific fully-qualified URL profile handle
+        if (parsed.contactDetails && (!parsed.contactDetails.linkedin || parsed.contactDetails.linkedin === "linkedin.com/in/elizabethemmanuel")) {
+          parsed.contactDetails.linkedin = "https://www.linkedin.com/in/elizabeth-emmanuel-carameldigitals";
+          migrated = true;
+        }
+
+        // Auto-migrate WhatsApp link to direct link
+        if (parsed.contactDetails && (!parsed.contactDetails.whatsapp || parsed.contactDetails.whatsapp.includes("Available via LinkedIn"))) {
+          parsed.contactDetails.whatsapp = "https://wa.link/ldgv9u";
+          migrated = true;
+        }
+
         if (migrated) {
           localStorage.setItem("elizabeth_portfolio_data", JSON.stringify(parsed));
         }

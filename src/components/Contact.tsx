@@ -125,7 +125,20 @@ export function Contact({ data, onChange, isEditing, onNewInquiry }: ContactProp
                   value={data.contactDetails.website}
                   onChange={(val) => handleContactDetailChange("website", val)}
                   isEditing={isEditing}
-                />
+                >
+                  <a
+                    href={
+                      data.contactDetails.website.startsWith("http")
+                        ? data.contactDetails.website
+                        : `https://${data.contactDetails.website}`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gold transition-colors underline decoration-gold/30 hover:decoration-gold"
+                  >
+                    {data.contactDetails.website}
+                  </a>
+                </EditableText>
               </div>
             </div>
           </div>
@@ -142,7 +155,20 @@ export function Contact({ data, onChange, isEditing, onNewInquiry }: ContactProp
                   value={data.contactDetails.linkedin}
                   onChange={(val) => handleContactDetailChange("linkedin", val)}
                   isEditing={isEditing}
-                />
+                >
+                  <a
+                    href={
+                      data.contactDetails.linkedin.startsWith("http")
+                        ? data.contactDetails.linkedin
+                        : `https://${data.contactDetails.linkedin}`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gold transition-colors underline decoration-gold/30 hover:decoration-gold break-all"
+                  >
+                    {data.contactDetails.linkedin}
+                  </a>
+                </EditableText>
               </div>
             </div>
           </div>
@@ -159,7 +185,14 @@ export function Contact({ data, onChange, isEditing, onNewInquiry }: ContactProp
                   value={data.contactDetails.email}
                   onChange={(val) => handleContactDetailChange("email", val)}
                   isEditing={isEditing}
-                />
+                >
+                  <a
+                    href={`mailto:${data.contactDetails.email}`}
+                    className="hover:text-gold transition-colors underline decoration-gold/30 hover:decoration-gold break-all"
+                  >
+                    {data.contactDetails.email}
+                  </a>
+                </EditableText>
               </div>
             </div>
           </div>
@@ -176,7 +209,23 @@ export function Contact({ data, onChange, isEditing, onNewInquiry }: ContactProp
                   value={data.contactDetails.whatsapp}
                   onChange={(val) => handleContactDetailChange("whatsapp", val)}
                   isEditing={isEditing}
-                />
+                >
+                  <a
+                    href={
+                      data.contactDetails.whatsapp.startsWith("http")
+                        ? data.contactDetails.whatsapp
+                        : `https://${data.contactDetails.whatsapp}`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-green-500/10 hover:bg-green-500/20 text-green-400 hover:text-green-300 border border-green-500/20 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all mt-1"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.1 1.45 4.8 1.45 5.26 0 9.54-4.28 9.54-9.54 0-2.55-1-4.94-2.82-6.75C16.3 2.5 13.91 1.5 11.46 1.5 6.2 1.5 1.92 5.78 1.92 11.04c0 1.74.46 3.44 1.33 4.93l-.99 3.61 3.7-.97zM17.41 14.3c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.5-.16-.71.16-.2.32-.82 1.04-1 1.25-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.49.14-.65.15-.14.32-.38.48-.56.16-.18.21-.3.32-.5.1-.2.05-.38-.03-.54-.08-.16-.71-1.72-.98-2.36-.26-.64-.53-.55-.72-.56l-.61-.01c-.2 0-.53.07-.8.37-.28.3-1.07 1.04-1.07 2.54s1.1 2.95 1.25 3.15c.15.2 2.16 3.3 5.24 4.63.73.32 1.3.51 1.74.65.74.24 1.4.2 1.94.12.6-.09 1.84-.75 2.1-1.48.25-.74.25-1.37.18-1.48-.07-.1-.27-.16-.62-.32z"/>
+                    </svg>
+                    <span>Chat on WhatsApp</span>
+                  </a>
+                </EditableText>
               </div>
             </div>
           </div>
