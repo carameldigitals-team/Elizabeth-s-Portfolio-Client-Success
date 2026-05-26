@@ -24,7 +24,7 @@ export const defaultPortfolioData: PortfolioData = {
   heroCtaText: "Explore AI W.A.V.E →",
   heroCtaLink: "https://carameldigitals.com/wave",
   heroSecondaryText: "My Story",
-  heroPhotoBadgeText: "Keynote\nSpeaker\n★ ★ ★",
+  heroPhotoBadgeText: "FOUNDER, CARAMEL\nDIGITAL ACADEMY",
 
   // About Section
   aboutHeading: "From Food Science Lab",

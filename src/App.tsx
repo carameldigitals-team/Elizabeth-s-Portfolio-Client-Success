@@ -88,6 +88,12 @@ export default function App() {
           });
         }
 
+        // Auto-migrate hero photo badge from Keynote Speaker to Founder, Caramel Digital Academy
+        if (!parsed.heroPhotoBadgeText || parsed.heroPhotoBadgeText.toLowerCase().includes("keynote\nspeaker")) {
+          parsed.heroPhotoBadgeText = "FOUNDER, CARAMEL\nDIGITAL ACADEMY";
+          migrated = true;
+        }
+
         if (migrated) {
           localStorage.setItem("elizabeth_portfolio_data", JSON.stringify(parsed));
         }
