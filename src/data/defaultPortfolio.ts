@@ -212,7 +212,7 @@ export const defaultPortfolioData: PortfolioData = {
   contactDetails: {
     website: "www.carameldigitals.com",
     linkedin: "https://www.linkedin.com/in/elizabeth-emmanuel-carameldigitals",
-    email: "hello@carameldigitals.com",
+    email: "carameldigitals@gmail.com",
     whatsapp: "https://wa.link/ldgv9u"
   }
 };

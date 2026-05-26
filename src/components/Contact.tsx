@@ -164,9 +164,10 @@ export function Contact({ data, onChange, isEditing, onNewInquiry }: ContactProp
                     }
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-gold transition-colors underline decoration-gold/30 hover:decoration-gold break-all"
+                    className="inline-flex items-center gap-2 bg-[#0077B5]/10 hover:bg-[#0077B5]/20 text-[#3cabf0] hover:text-white border border-[#0077B5]/20 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all mt-1"
                   >
-                    {data.contactDetails.linkedin}
+                    <Linkedin size={14} className="shrink-0" />
+                    <span>Connect with me on LinkedIn</span>
                   </a>
                 </EditableText>
               </div>

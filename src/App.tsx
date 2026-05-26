@@ -166,6 +166,12 @@ export default function App() {
           migrated = true;
         }
 
+        // Auto-migrate Contact Email
+        if (parsed.contactDetails && (!parsed.contactDetails.email || parsed.contactDetails.email === "hello@carameldigitals.com")) {
+          parsed.contactDetails.email = "carameldigitals@gmail.com";
+          migrated = true;
+        }
+
         if (migrated) {
           localStorage.setItem("elizabeth_portfolio_data", JSON.stringify(parsed));
         }
