@@ -54,12 +54,25 @@ export default function App() {
           migrated = true;
         }
 
-        // Auto-migrate WiPatechs Conference year from 2024 to 2026
+        // Auto-migrate WiPatechs Conference year and topic
         if (parsed.speakingList && Array.isArray(parsed.speakingList)) {
           parsed.speakingList = parsed.speakingList.map(item => {
+            let itemMigrated = false;
+            let year = item.year;
+            let topic = item.topic;
+            
             if (item.event === "WiPatechs Conference" && item.year === "2024") {
+              year = "2026";
+              itemMigrated = true;
+            }
+            if (item.event === "WiPatechs Conference" && (!item.topic || item.topic.includes("Women in Technology"))) {
+              topic = "AI monetization for Women in Health care and Life sciences- Transforming skills into sustainable digital income streams across Africa";
+              itemMigrated = true;
+            }
+            
+            if (itemMigrated) {
               migrated = true;
-              return { ...item, year: "2026" };
+              return { ...item, year, topic };
             }
             return item;
           });

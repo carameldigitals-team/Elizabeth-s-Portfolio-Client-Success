@@ -152,7 +152,7 @@ export const defaultPortfolioData: PortfolioData = {
       year: "2026",
       type: "Keynote",
       event: "WiPatechs Conference",
-      topic: "AI Monetization for Women in Technology — transforming skills into sustainable digital income streams across Africa."
+      topic: "AI monetization for Women in Health care and Life sciences- Transforming skills into sustainable digital income streams across Africa"
     },
     {
       id: "spk-2",
