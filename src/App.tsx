@@ -21,7 +21,7 @@ import { Sparkles, ArrowUp, AlertCircle } from "lucide-react";
 
 export default function App() {
   const [portfolio, setPortfolio] = useState<PortfolioData>(defaultPortfolioData);
-  const [uploadedPhoto, setUploadedPhoto] = useState<string | null>("/src/assets/images/elizabeth_headshot_1779809556104.png");
+  const [uploadedPhoto, setUploadedPhoto] = useState<string | null>("/assets/images/elizabeth_headshot_1779809556104.png");
   const [inquiries, setInquiries] = useState<ReceivedInquiry[]>([]);
   const [isEditing, setIsEditing] = useState(false);
   const [isInboxOpen, setIsInboxOpen] = useState(false);
@@ -77,12 +77,39 @@ export default function App() {
           migrated = true;
         }
 
-        // Auto-migrate Engineer Ebenezer's role to Geologist & Academy Client
+        // Auto-migrate testimonial avatarUrls from /src/assets/images/ to /assets/images/ or direct link
         if (parsed.testimonialList && Array.isArray(parsed.testimonialList)) {
           parsed.testimonialList = parsed.testimonialList.map(item => {
-            if (item.author === "Engineer Ebenezer A." && item.role === "Technology Director & Academy Client") {
+            let itemMigrated = false;
+            let avatarUrl = item.avatarUrl;
+            let role = item.role;
+            if (item.author === "Chimezie I." && avatarUrl !== "https://i.ibb.co/LdVWS9rf/1779819316267.jpg") {
+              avatarUrl = "https://i.ibb.co/LdVWS9rf/1779819316267.jpg";
+              itemMigrated = true;
+            }
+            if (avatarUrl === "/src/assets/images/chimezie_avatar_1779815145996.png") {
+              avatarUrl = "https://i.ibb.co/LdVWS9rf/1779819316267.jpg";
+              itemMigrated = true;
+            }
+            if (avatarUrl === "/assets/images/chimezie_avatar_1779815145996.png") {
+              avatarUrl = "https://i.ibb.co/LdVWS9rf/1779819316267.jpg";
+              itemMigrated = true;
+            }
+            if (avatarUrl === "/src/assets/images/ebenezer_avatar_1779815166119.png") {
+              avatarUrl = "https://i.ibb.co/Q3H7Q9Vd/1779814967804.jpg";
+              itemMigrated = true;
+            }
+            if (item.author === "Engineer Ebenezer A." && avatarUrl !== "https://i.ibb.co/Q3H7Q9Vd/1779814967804.jpg") {
+              avatarUrl = "https://i.ibb.co/Q3H7Q9Vd/1779814967804.jpg";
+              itemMigrated = true;
+            }
+            if (item.author === "Engineer Ebenezer A." && (role === "Technology Director & Academy Client" || !role)) {
+              role = "Geologist & Academy Client";
+              itemMigrated = true;
+            }
+            if (itemMigrated) {
               migrated = true;
-              return { ...item, role: "Geologist & Academy Client" };
+              return { ...item, avatarUrl, role };
             }
             return item;
           });
@@ -108,7 +135,12 @@ export default function App() {
 
       const storedPhoto = localStorage.getItem("elizabeth_portfolio_photo");
       if (storedPhoto) {
-        setUploadedPhoto(storedPhoto);
+        if (storedPhoto === "/src/assets/images/elizabeth_headshot_1779809556104.png") {
+          setUploadedPhoto("/assets/images/elizabeth_headshot_1779809556104.png");
+          localStorage.setItem("elizabeth_portfolio_photo", "/assets/images/elizabeth_headshot_1779809556104.png");
+        } else {
+          setUploadedPhoto(storedPhoto);
+        }
       }
     } catch (e) {
       console.error("Failed to load data from LocalStorage", e);

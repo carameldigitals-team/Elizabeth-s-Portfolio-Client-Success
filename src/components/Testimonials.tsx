@@ -152,7 +152,7 @@ export function Testimonials({ data, onChange, isEditing }: TestimonialsProps) {
                     <input
                       type="text"
                       value={item.avatarUrl || ""}
-                      placeholder="/src/assets/images/... (optional)"
+                      placeholder="/assets/images/... (optional)"
                       onChange={(e) => handleTestimonialChange(item.id, "avatarUrl", e.target.value)}
                       className="bg-navy-dark border border-gold/20 text-white rounded px-2 py-1 text-[10px] w-full focus:outline-none focus:border-gold"
                     />

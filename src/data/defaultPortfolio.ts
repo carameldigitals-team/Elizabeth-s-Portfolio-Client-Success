@@ -187,7 +187,7 @@ export const defaultPortfolioData: PortfolioData = {
       author: "Chimezie I.",
       role: "Alumnus, Caramel Digital Academy",
       avatarInitials: "CI",
-      avatarUrl: "/src/assets/images/chimezie_avatar_1779815145996.png"
+      avatarUrl: "https://i.ibb.co/LdVWS9rf/1779819316267.jpg"
     },
     {
       id: "tst-2",
@@ -195,7 +195,7 @@ export const defaultPortfolioData: PortfolioData = {
       author: "Engineer Ebenezer A.",
       role: "Geologist & Academy Client",
       avatarInitials: "EE",
-      avatarUrl: "/src/assets/images/ebenezer_avatar_1779815166119.png"
+      avatarUrl: "https://i.ibb.co/Q3H7Q9Vd/1779814967804.jpg"
     }
   ],
 
