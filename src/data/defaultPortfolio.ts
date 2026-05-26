@@ -8,7 +8,7 @@ import { PortfolioData } from "../types";
 export const defaultPortfolioData: PortfolioData = {
   ownerName: "Elizabeth Emmanuel",
   headerCtaText: "Join WAVE",
-  headerCtaLink: "https://carameldigitals.com/wave",
+  headerCtaLink: "https://aiwavemasterclass.carameldigitals.com/",
 
   // Hero Section
   heroEyebrow: "AI Monetization Strategist",
@@ -22,7 +22,7 @@ export const defaultPortfolioData: PortfolioData = {
     { id: "stat-3", num: "3×", label: "Keynote Speaker" }
   ],
   heroCtaText: "Explore AI W.A.V.E →",
-  heroCtaLink: "https://carameldigitals.com/wave",
+  heroCtaLink: "https://aiwavemasterclass.carameldigitals.com/",
   heroSecondaryText: "My Story",
   heroPhotoBadgeText: "FOUNDER, CARAMEL\nDIGITAL ACADEMY",
 
@@ -138,7 +138,7 @@ export const defaultPortfolioData: PortfolioData = {
   masterclassCtaLabel: "Now Enrolling",
   masterclassCtaTitle: "Ready to Ride the WAVE?",
   masterclassCtaSub: "Join over 1,000 African professionals who have already started building income beyond their salary. The next cohort is forming now.",
-  masterclassCtaLink: "https://carameldigitals.com/wave",
+  masterclassCtaLink: "https://aiwavemasterclass.carameldigitals.com/",
   masterclassCtaBtnText: "Join the Masterclass →",
   masterclassCheckoutAlert: "🔒 Secure checkout via Selar · Pan-African access",
 

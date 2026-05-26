@@ -121,6 +121,20 @@ export default function App() {
           migrated = true;
         }
 
+        // Auto-migrate CTA links to the masterclass registration page
+        if (!parsed.heroCtaLink || parsed.heroCtaLink.includes("carameldigitals.com/wave")) {
+          parsed.heroCtaLink = "https://aiwavemasterclass.carameldigitals.com/";
+          migrated = true;
+        }
+        if (!parsed.headerCtaLink || parsed.headerCtaLink.includes("carameldigitals.com/wave")) {
+          parsed.headerCtaLink = "https://aiwavemasterclass.carameldigitals.com/";
+          migrated = true;
+        }
+        if (!parsed.masterclassCtaLink || parsed.masterclassCtaLink.includes("carameldigitals.com/wave")) {
+          parsed.masterclassCtaLink = "https://aiwavemasterclass.carameldigitals.com/";
+          migrated = true;
+        }
+
         if (migrated) {
           localStorage.setItem("elizabeth_portfolio_data", JSON.stringify(parsed));
         }
