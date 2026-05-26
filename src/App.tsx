@@ -21,7 +21,7 @@ import { Sparkles, ArrowUp, AlertCircle } from "lucide-react";
 
 export default function App() {
   const [portfolio, setPortfolio] = useState<PortfolioData>(defaultPortfolioData);
-  const [uploadedPhoto, setUploadedPhoto] = useState<string | null>("/assets/images/elizabeth_headshot_1779809556104.png");
+  const [uploadedPhoto, setUploadedPhoto] = useState<string | null>("/assets/images/elizabeth_balanced_1779821832828.png");
   const [inquiries, setInquiries] = useState<ReceivedInquiry[]>([]);
   const [isEditing, setIsEditing] = useState(false);
   const [isInboxOpen, setIsInboxOpen] = useState(false);
@@ -162,9 +162,11 @@ export default function App() {
 
       const storedPhoto = localStorage.getItem("elizabeth_portfolio_photo");
       if (storedPhoto) {
-        if (storedPhoto === "/src/assets/images/elizabeth_headshot_1779809556104.png") {
-          setUploadedPhoto("/assets/images/elizabeth_headshot_1779809556104.png");
-          localStorage.setItem("elizabeth_portfolio_photo", "/assets/images/elizabeth_headshot_1779809556104.png");
+        if (storedPhoto === "/src/assets/images/elizabeth_headshot_1779809556104.png" ||
+            storedPhoto === "/assets/images/elizabeth_headshot_1779809556104.png" ||
+            storedPhoto === "/src/assets/images/elizabeth_balanced_1779821832828.png") {
+          setUploadedPhoto("/assets/images/elizabeth_balanced_1779821832828.png");
+          localStorage.setItem("elizabeth_portfolio_photo", "/assets/images/elizabeth_balanced_1779821832828.png");
         } else {
           setUploadedPhoto(storedPhoto);
         }
