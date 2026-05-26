@@ -26,9 +26,16 @@ export default function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [isInboxOpen, setIsInboxOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showEditorButton, setShowEditorButton] = useState(false);
 
   // 1. Initial State Hydration from Local Storage
   useEffect(() => {
+    // Check if '?edit=true' or '#edit' is appended to the URL to show control toolkit
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("edit") === "true" || window.location.hash === "#edit" || window.location.hash === "#editor") {
+      setShowEditorButton(true);
+    }
+
     try {
       const storedData = localStorage.getItem("elizabeth_portfolio_data");
       if (storedData) {
@@ -298,14 +305,16 @@ export default function App() {
       </footer>
 
       {/* 12. Floating control toolkit */}
-      <EditorToolbar
-        isEditing={isEditing}
-        onToggleEdit={handleToggleEdit}
-        onReset={handleResetDefaults}
-        onOpenInbox={() => setIsInboxOpen(true)}
-        inboxCount={inquiries.length}
-        onExport={handleExportConfig}
-      />
+      {showEditorButton && (
+        <EditorToolbar
+          isEditing={isEditing}
+          onToggleEdit={handleToggleEdit}
+          onReset={handleResetDefaults}
+          onOpenInbox={() => setIsInboxOpen(true)}
+          inboxCount={inquiries.length}
+          onExport={handleExportConfig}
+        />
+      )}
 
       {/* 13. Local Form Submission Inbox Drawer Overlay */}
       {isInboxOpen && (
